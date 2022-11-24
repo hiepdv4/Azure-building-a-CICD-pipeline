@@ -1,0 +1,74 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+
+variables:
+  # Azure Resource Manager connection created during pipeline creation
+  azureServiceConnectionId: '10c56f3c-c2f4-4e81-83da-180a2e788fd9'
+  # Web app name
+  webAppName: 'azureappservice1'
+  vmImageName: 'ubuntu-latest'
+  pythonVersion: 3.7
+  # Environment name
+  environmentName: 'test'
+  # Project root folder. Point to the folder containing manage.py file.
+  projectRoot: $(System.DefaultWorkingDirectory)
+  
+
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:
+  - job: BuildJob
+    pool:
+      name: "Default"
+      vmImage: $(vmImageName)
+    steps:
+    - script: |
+        python -m venv antenv
+        source antenv/bin/activate
+        make install
+      workingDirectory: $(projectRoot)
+      displayName: "Install requirements"
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
+      inputs:
+        rootFolderOrFile: '$(projectRoot)'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: /home/ubuntu/source.zip
+        replaceExistingArchive: true
+    - upload: /home/ubuntu/source.zip
+      displayName: 'publish package'
+      artifact: drop
+
+- stage: Deploy
+  displayName: 'Deploy Web App'
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - deployment: DeploymentJob
+    pool:
+      name: "Default"
+      vmImage: $(vmImageName)
+    environment: $(environmentName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          # - task: UsePythonVersion@0
+          #   inputs:
+          #     versionSpec: '$(pythonVersion)'
+          #   displayName: 'Use Python version'
+          - task: AzureWebApp@1
+            displayName: 'Deploy Azure Web App : '
+            inputs:
+              azureSubscription: $(azureServiceConnectionId)
+              appName: $(webAppName)
+              package: '$(Pipeline.Workspace)/drop/source.zip'
+              # startUpCommand: 'python app.py'
