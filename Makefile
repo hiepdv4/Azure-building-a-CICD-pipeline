@@ -1,5 +1,5 @@
 setup:
-	python3 -m venv ~/.udacity-devops
+	python3 -m venv ~/.udacity-devops-project2
 
 install:
 	python -m pip install --upgrade pip
