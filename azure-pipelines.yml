@@ -11,7 +11,7 @@ variables:
   # Azure Resource Manager connection created during pipeline creation
   azureServiceConnectionId: '68971426-8be8-4edd-b102-5dbe78a36cfa'
   # Web app name
-  webAppName: 'azureproject2'
+  webAppName: 'udacityproject2'
   vmImageName: 'ubuntu-latest'
   pythonVersion: 3.7
   # Environment name
