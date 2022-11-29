@@ -11,7 +11,7 @@ variables:
   azureServiceConnectionId: 'c3867ea7-fe80-4c07-9c9b-1b33aac62eb0'
 
   # Web app name
-  webAppName: ''
+  webAppName: 'azureproject2'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -31,6 +31,7 @@ stages:
   jobs:
   - job: BuildJob
     pool:
+      name: "Default"
       vmImage: $(vmImageName)
     steps:
     - task: UsePythonVersion@0
@@ -41,9 +42,7 @@ stages:
     - script: |
         python -m venv antenv
         source antenv/bin/activate
-        python -m pip install --upgrade pip
-        pip install setup
-        pip install -r requirements.txt
+        make install
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
@@ -53,10 +52,10 @@ stages:
         rootFolderOrFile: '$(projectRoot)'
         includeRootFolder: false
         archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        archiveFile: /home/ubuntu/source.zip
         replaceExistingArchive: true
 
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    - upload: /home/ubuntu/source.zip
       displayName: 'Upload package'
       artifact: drop
 
@@ -67,6 +66,7 @@ stages:
   jobs:
   - deployment: DeploymentJob
     pool:
+      name: "Default"
       vmImage: $(vmImageName)
     environment: $(environmentName)
     strategy:
@@ -84,4 +84,4 @@ stages:
             inputs:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+              package: $(Pipeline.Workspace)/drop/source.zip
