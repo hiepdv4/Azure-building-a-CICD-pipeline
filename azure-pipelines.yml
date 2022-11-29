@@ -35,7 +35,7 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
-        python3 -m venv antenv
+        python3.7 -m venv antenv
         source antenv/bin/activate
         make install
       workingDirectory: $(projectRoot)
