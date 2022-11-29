@@ -9,9 +9,9 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: '5abf7f9b-3841-4185-a65d-b2c7cec414a8'
+  azureServiceConnectionId: '68971426-8be8-4edd-b102-5dbe78a36cfa'
   # Web app name
-  webAppName: 'hiepdang'
+  webAppName: 'azureproject2'
   vmImageName: 'ubuntu-latest'
   pythonVersion: 3.7
   # Environment name
