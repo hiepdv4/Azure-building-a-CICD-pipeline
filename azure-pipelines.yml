@@ -8,10 +8,10 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: 'c3867ea7-fe80-4c07-9c9b-1b33aac62eb0'
+  azureServiceConnectionId: '68971426-8be8-4edd-b102-5dbe78a36cfa'
 
   # Web app name
-  webAppName: 'azureproject'
+  webAppName: 'azureproject2'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
