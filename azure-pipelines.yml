@@ -47,10 +47,10 @@ stages:
         rootFolderOrFile: '$(projectRoot)'
         includeRootFolder: false
         archiveType: zip
-        archiveFile: /home/ubuntu/source.zip
+        archiveFile: /home/devopsagent/source.zip
         replaceExistingArchive: true
 
-    - upload: /home/ubuntu/source.zip
+    - upload: /home/devopsagent/source.zip
       displayName: 'Upload package'
       artifact: drop
 
