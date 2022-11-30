@@ -69,9 +69,19 @@ This is project Azure devops building a CICD pipeline for a Python-base applicat
   - Update environmentName
 https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/azure-pipelines.yml
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/12.azure_pipeline.png)
+- Pipeline azure trigged after new code push to repo
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/13.az_pipeline.png)
+- Log pipeline azure
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/14.deploy_webapp.png)
+- New code deployed to azure web app
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/16.URL.png)
+- Run script ./make_predict_azure_app.sh to check azure app working
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/15.test_app.png)
 
+# Enhancements
+- Deploy project using Docker or Kubernetes
 
-
+# Demo
 
 
 
