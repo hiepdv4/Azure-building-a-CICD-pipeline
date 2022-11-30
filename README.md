@@ -26,3 +26,18 @@ This is project Azure devops building a CICD pipeline for a Python-base applicat
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/1.setup_python_env.png)
   - Result test coverage
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/2.test_coverage.png)
+- Deploy project to web service using Azure Cloud Shell
+  - az webapp up --name azureproject2 --resource-group Azuredevops --runtime "PYTHON:3.7"
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/3.azure_build_webapp.png)
+- Prediction run against a working deployed Azure Application
+- Update new URL 
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/4.update_make_predict_azure_app.png)
+- Run ./make_predict_azure_app.sh
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/5.run_prediction_az.png)
+
+3. [CI] Setup Github Action:
+- Enable it in your Github https://github.com/marketplace/azure-pipelines
+
+
+
+
