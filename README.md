@@ -37,6 +37,10 @@ This is project Azure devops building a CICD pipeline for a Python-base applicat
 
 3. [CI] Setup Github Action:
 - Enable it in your Github https://github.com/marketplace/azure-pipelines
+- Verify github apps
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/19.github_action1.png)
+- Check CI test code successfully.
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/17.github_action.png)
 
 
 
