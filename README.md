@@ -39,8 +39,25 @@ This is project Azure devops building a CICD pipeline for a Python-base applicat
 - Enable it in your Github https://github.com/marketplace/azure-pipelines
 - Verify github apps
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/19.github_action1.png)
+- File workflow CI github https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/.github/workflows/main.yml
 - Check CI test code successfully.
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/17.github_action.png)
+4. [CD] Setup Azure pipeline
+- Configure the Linux VM as an Azure DevOps Build Agent
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/6.VM_agent.png)
+- SSH into the VM agent
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/7.ssh_agent.png)
+- Config agent
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/8.config_agent.png)
+
+
+
+
+
+
+
+
+
 
 
 
