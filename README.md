@@ -48,6 +48,10 @@ This is project Azure devops building a CICD pipeline for a Python-base applicat
 - SSH into the VM agent
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/7.ssh_agent.png)
 - Config agent
+  - curl -O https://vstsagentpackage.azureedge.net/agent/2.202.1/vsts-agent-linux-x64-2.202.1.tar.gz
+  - mkdir myagent && cd myagent
+  - tar zxvf ../vsts-agent-linux-x64-2.202.1.tar.gz
+  - ./config.sh # Configure the agent
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/8.config_agent.png)
 
 
