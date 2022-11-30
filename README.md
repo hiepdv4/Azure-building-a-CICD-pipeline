@@ -53,7 +53,22 @@ This is project Azure devops building a CICD pipeline for a Python-base applicat
   - tar zxvf ../vsts-agent-linux-x64-2.202.1.tar.gz
   - ./config.sh # Configure the agent
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/8.config_agent.png)
-
+  - sudo ./svc.sh install
+  - sudo ./svc.sh start
+- Check service agent on VM
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/20.service_agent.png)
+- Confirm that the self-hosted agent is online on dev.azure.com
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/9.agent_pool.png)
+- Create service connection
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/10.service_connection.png)
+- Add repo source code python to azure pipeline
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/11.add_repo_github.png)
+- Config pipeline azure YAML
+  - Update azureServiceConnectionId
+  - Update webAppName
+  - Update environmentName
+https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/azure-pipelines.yml
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/12.azure_pipeline.png)
 
 
 
