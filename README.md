@@ -17,7 +17,7 @@ This is project Azure devops building a CICD pipeline for a Python-base applicat
 - Add public SSH key to your Github. This is guide https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent 
 - Clone source code to Azure Cloud Shell
   - Git clone git@github.com:hiepdv4/Azure-building-a-CICD-pipeline.git
-2. Deploy app on Azure App Service
+2. **Deploy app on Azure App Service**
 - Go to folder **Azure-building-a-CICD-pipeline**
 - Create the Python Virtual Environment
   - make setup
@@ -29,34 +29,35 @@ This is project Azure devops building a CICD pipeline for a Python-base applicat
 - Deploy project to web service using Azure Cloud Shell
   - az webapp up --name azureproject2 --resource-group hiepdang --runtime "PYTHON:3.7"
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/3.azure_build_webapp.png)
+- Access webap URL to check it:
+![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/21.pythonappv1.png)
 - Prediction run against a working deployed Azure Application
 - Update new URL 
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/4.update_make_predict_azure_app.png)
 - Run ./make_predict_azure_app.sh
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/5.run_prediction_az.png)
 
-3. [CI] Setup Github Action:
+3.** [CI] Setup Github Action:**
 - Enable it in your Github https://github.com/marketplace/azure-pipelines
 - Verify github apps
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/19.github_action1.png)
 - File workflow CI github https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/.github/workflows/main.yml
 - Check CI test code successfully.
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/17.github_action.png)
-4. [CD] Setup Azure pipeline
+4. **[CD] Setup Azure pipeline**
 - Configure the Linux VM as an Azure DevOps Build Agent
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/6.VM_agent.png)
 - SSH into the VM agent
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/7.ssh_agent.png)
-- Config agent
+- Config agent:
+  - sudo snap install docker
+  - sudo groupadd docker
+  - sudo usermod -aG docker devopsagent
   - curl -O https://vstsagentpackage.azureedge.net/agent/2.202.1/vsts-agent-linux-x64-2.202.1.tar.gz
   - mkdir myagent && cd myagent
   - tar zxvf ../vsts-agent-linux-x64-2.202.1.tar.gz
   - ./config.sh # Configure the agent
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/8.config_agent.png)
-  - sudo ./svc.sh install
-  - sudo ./svc.sh start
-- Check service agent on VM
-![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/20.service_agent.png)
 - Confirm that the self-hosted agent is online on dev.azure.com
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/9.agent_pool.png)
 - Create service connection
@@ -82,7 +83,7 @@ https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/azure-pipeli
 - Deploy project using Docker or Kubernetes
 
 # Demo
-https://www.youtube.com/watch?v=nXLFr0ICjkU
+https://youtu.be/Qy2TotqCCBc
 
 
 
