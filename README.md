@@ -27,7 +27,7 @@ This is project Azure devops building a CICD pipeline for a Python-base applicat
   - Result test coverage
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/2.test_coverage.png)
 - Deploy project to web service using Azure Cloud Shell
-  - az webapp up --name azureproject2 --resource-group Azuredevops --runtime "PYTHON:3.7"
+  - az webapp up --name azureproject2 --resource-group hiepdang --runtime "PYTHON:3.7"
 ![alt text](https://github.com/hiepdv4/Azure-building-a-CICD-pipeline/blob/main/images/3.azure_build_webapp.png)
 - Prediction run against a working deployed Azure Application
 - Update new URL 
